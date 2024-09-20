@@ -9,9 +9,12 @@ fn match_pattern(input_line: &str, pattern: &str) -> bool {
         // } else {
             
         // }
+        return input_line.contains(pattern);
+    } else if pattern.chars().count() == 2 {
         let parts = pattern.split_whitespace().map(|s| s.parse::<i32>());
         println!("{:?}", parts);
-        return input_line.contains(pattern);
+
+        return true;
     } else {
         panic!("Unhandled pattern: {}", pattern)
     }

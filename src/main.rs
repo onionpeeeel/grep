@@ -11,10 +11,12 @@ fn match_pattern(input_line: &str, pattern: &str) -> bool {
         // }
         return input_line.contains(pattern);
     } else if pattern.chars().count() == 2 {
-        let parts = pattern.split_whitespace().map(|s| s.parse::<i32>());
-        println!("{:?}", parts);
+        let mut parts = pattern.split_whitespace().map(|s| s.parse::<i32>());
 
-        return true;
+        match parts.next() {
+            Some(_i) => return true,
+            None => return false
+        }
     } else {
         panic!("Unhandled pattern: {}", pattern)
     }

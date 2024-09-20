@@ -14,7 +14,10 @@ fn match_pattern(input_line: &str, pattern: &str) -> bool {
         let mut parts = pattern.split_whitespace().map(|s| s.parse::<i32>());
 
         match parts.next() {
-            Some(_i) => return true,
+            Some(i) => {
+                println!("{:?}", i);
+                return true
+            }
             None => return false
         }
     } else {

@@ -4,11 +4,12 @@ use std::process;
 
 fn match_pattern(input_line: &str, pattern: &str) -> bool {
     if pattern.chars().count() == 1 {
-        if (pattern.split_whitespace().map(|s| s.parse())) {
-            return true;
-        } else {
-            return input_line.contains(pattern);
-        }
+        // if (pattern.split_whitespace().map(|s| s.parse())) {
+        //     return true;
+        // } else {
+            
+        // }
+        return input_line.contains(pattern);
     } else {
         panic!("Unhandled pattern: {}", pattern)
     }
